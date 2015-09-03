@@ -6,7 +6,11 @@ public class Joueur extends Entite {
 		super(attaque, defense, vitesse, chance, pdv);
 		this.nom = nom;
 	}
-	
+
+	public String getNom(){
+		return this.nom;
+	}
+
 	public void perdVie(int vie) {
 		super.pdv -= vie;
 	}
