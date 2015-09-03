@@ -54,8 +54,8 @@ abstract class Entite {
 	}
 
 	public String toString() {
-		return "Attaque : " + attaque + ",Defense : " + defense + ",Vitesse : "
-				+ vitesse + ",Chance : " + chance + ", Pdv : " + pdv;
+		return "Attaque : " + attaque + ", Defense : " + defense + ", Vitesse : "
+				+ vitesse + ", Chance : " + chance + ", Pdv : " + pdv;
 	}
 
 	public int attaque(Entite e){

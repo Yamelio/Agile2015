@@ -8,19 +8,23 @@ public class Bonus {
 	private int choixBonus = -1;
 	private int valeurCarac = -1;
 
-	public void petitBonus(Joueur joueur) {
-		this.methode(5, joueur);
-		choixBonus = 0;
-	}
+	public void Bonus(Joueur joueur, int valeur) {
+		switch(valeur){
+			case 1:
+				this.methode(5, joueur);
+				choixBonus = 0;
+				break;
+			case 2:
+				this.methode(10, joueur);
+				choixBonus = 1;
+				break;
+			case 3:
+				this.methode(15, joueur);
+				choixBonus = 2;
+				break;
+		}
 
-	public void moyenBonus(Joueur joueur) {
-		this.methode(10, joueur);
-		choixBonus = 1;
-	}
 
-	public void grandBonus(Joueur joueur) {
-		this.methode(15, joueur);
-		choixBonus = 2;
 	}
 
 	public void methode(int valeurBonus, Joueur joueur) {
@@ -58,16 +62,16 @@ public class Bonus {
 				str = "Le personnage gagne 15 en " + carac[valeurCarac];
 			break;
 		default:
-			str = "Le personnage n'a rien gagner";
+			str = "Le personnage n'a rien gagne";
 		}
 		return str;
 	}
 	
 	public static void main(String[] args) {
 		Bonus b = new Bonus();
-		Joueur joueur = new Joueur(97,97,50,50,100,"Gilles");
+		Joueur joueur = new Joueur(50,50,50,50,100,"Gilles");
 		System.out.println(joueur);
-		b.grandBonus(joueur);
+		b.Bonus(joueur, 1);
 		System.out.println(b);
 		System.out.println(joueur);
 	}

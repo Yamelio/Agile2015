@@ -7,19 +7,21 @@ public class Malus {
 	private int choixMalus = -1;
 	private int valeurCarac = -1;
 
-	public void petitMalus(Joueur joueur) {
-		this.methode(-2, joueur);
-		choixMalus = 0;
-	}
-
-	public void moyenMalus(Joueur joueur) {
-		this.methode(-5, joueur);
-		choixMalus = 1;
-	}
-
-	public void grandMalus(Joueur joueur) {
-		this.methode(-7, joueur);
-		choixMalus = 2;
+	public void Malus(Joueur joueur, int valeur) {
+		switch(valeur){
+			case 1:
+				this.methode(-2, joueur);
+				choixMalus = 0;
+				break;
+			case 2:
+				this.methode(-5, joueur);
+				choixMalus = 1;
+				break;
+			case 3:
+				this.methode(-7, joueur);
+				choixMalus = 2;
+				break;
+		}
 	}
 
 	public void methode(int valeurMalus, Joueur joueur) {
