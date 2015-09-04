@@ -7,21 +7,11 @@ public class Malus {
 	private int choixMalus = -1;
 	private int valeurCarac = -1;
 
+
+
 	public void Malus(Joueur joueur, int valeur) {
-		switch(valeur){
-			case 1:
-				this.methode(-2, joueur);
-				choixMalus = 0;
-				break;
-			case 2:
-				this.methode(-5, joueur);
-				choixMalus = 1;
-				break;
-			case 3:
-				this.methode(-7, joueur);
-				choixMalus = 2;
-				break;
-		}
+		this.methode(valeur,joueur);
+		choixMalus=valeur;
 	}
 
 	public void methode(int valeurMalus, Joueur joueur) {
@@ -44,23 +34,9 @@ public class Malus {
 	}
 
 	public String toString() {
-		String str = null;
-		switch (choixMalus) {
-		case 0:
-			if (valeurCarac >= 0)
-				str = "Le personnage perd 2 en " + carac[valeurCarac];
-			break;
-		case 1:
-			if (valeurCarac >= 0)
-				str = "Le personnage perd 5 en " + carac[valeurCarac];
-			break;
-		case 2:
-			if (valeurCarac >= 0)
-				str = "Le personnage perd 7 en " + carac[valeurCarac];
-			break;
-		default:
-			str = "Le personnage n'a rien perdu";
+		if (choixMalus >= 0) {
+			return "Le personnage a perdu " + choixMalus + " en " + carac[valeurCarac];
 		}
-		return str;
+		return "Le personnage n'a rien perdu";
 	}
 }
